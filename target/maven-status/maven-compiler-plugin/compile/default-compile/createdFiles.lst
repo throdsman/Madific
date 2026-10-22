@@ -1,2 +1,5 @@
+com\gestionframeword\madific\control\login_servlet.class
+listener\AppInitializerListener.class
 com\gestionframeword\madific\resources\JakartaEE10Resource.class
 com\gestionframeword\madific\JakartaRestConfiguration.class
+com\gestionframeword\madific\model\DBConnection.class

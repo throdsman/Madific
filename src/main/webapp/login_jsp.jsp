@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    <% 
+        String conn = String.valueOf(request.getAttribute("connection")); 
+        String successParam = request.getParameter("success");
+    %>
+        <h1>Status: <%= successParam %></h1> 
+        <form action="login_servlet" method="POST">
+            <button type="submit" class="btn-submit">Confirmar Status</button>
+        </form>
     </body>
 </html>
