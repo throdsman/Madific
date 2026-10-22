@@ -28,7 +28,7 @@ public class login_servlet extends HttpServlet
             {
                 request.setAttribute("errorMessage", "Correo/Contraseña invalido!");
                 request.setAttribute("email", email);
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                request.getRequestDispatcher("login_jsp.jsp").forward(request, response);
             } 
            
             String hashed = PasswordModifier.SecurePassword(pass);
@@ -53,7 +53,7 @@ public class login_servlet extends HttpServlet
         }
         catch (Exception e)
         {
-             request.getRequestDispatcher("index.jsp").forward(request, response);
+             request.getRequestDispatcher("login_jsp.jsp").forward(request, response);
              return;
         }
     }

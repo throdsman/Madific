@@ -3,7 +3,7 @@
     // Session security check & data extraction
     HttpSession userSession = request.getSession(false);
     if (userSession == null || userSession.getAttribute("currentUser") == null) {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("login_jsp.jsp");
         return;
     }
     String userName = (String) userSession.getAttribute("currentUser");
