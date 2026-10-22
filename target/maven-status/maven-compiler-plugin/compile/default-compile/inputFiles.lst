@@ -7,7 +7,9 @@ C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframew
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\listener\AppInitializerListener.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\control\RegisterToLogin.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\control\register_servlet.java
+C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\control\dashboard_servlet.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\model\UserDB.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\model\PasswordModifier.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\model\UserRole.java
 C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\model\NetworkResponseEnum.java
+C:\Users\Luis\Documents\NetBeansProjects\Madific\src\main\java\com\gestionframeword\madific\control\logout_servlet.java

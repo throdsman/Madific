@@ -1,6 +1,8 @@
 com\gestionframeword\madific\control\login_servlet.class
+com\gestionframeword\madific\control\dashboard_servlet.class
 com\gestionframeword\madific\control\LoginToRegister_servlet.class
 com\gestionframeword\madific\model\UserRole.class
+com\gestionframeword\madific\control\logout_servlet.class
 com\gestionframeword\madific\model\NetworkResponseEnum.class
 listener\AppInitializerListener.class
 com\gestionframeword\madific\model\PasswordModifier.class
