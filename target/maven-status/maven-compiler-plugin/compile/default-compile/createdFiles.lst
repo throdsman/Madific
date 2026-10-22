@@ -1,5 +1,15 @@
 com\gestionframeword\madific\control\login_servlet.class
+com\gestionframeword\madific\control\LoginToRegister_servlet.class
+com\gestionframeword\madific\model\UserRole.class
+com\gestionframeword\madific\model\NetworkResponseEnum.class
 listener\AppInitializerListener.class
-com\gestionframeword\madific\resources\JakartaEE10Resource.class
+com\gestionframeword\madific\model\PasswordModifier.class
 com\gestionframeword\madific\JakartaRestConfiguration.class
 com\gestionframeword\madific\model\DBConnection.class
+com\gestionframeword\madific\model\User.class
+com\gestionframeword\madific\control\RegisterToLogin.class
+com\gestionframeword\madific\control\register_servlet$1.class
+com\gestionframeword\madific\model\User$UserBuilder.class
+com\gestionframeword\madific\model\UserDB.class
+com\gestionframeword\madific\resources\JakartaEE10Resource.class
+com\gestionframeword\madific\control\register_servlet.class

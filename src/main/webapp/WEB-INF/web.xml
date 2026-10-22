@@ -4,9 +4,33 @@
         <servlet-name>login_servlet</servlet-name>
         <servlet-class>com.gestionframeword.madific.control.login_servlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>register_servlet</servlet-name>
+        <servlet-class>com.gestionframeword.madific.control.register_servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginToRegister_servlet</servlet-name>
+        <servlet-class>com.gestionframeword.madific.control.LoginToRegister_servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterToLogin</servlet-name>
+        <servlet-class>com.gestionframeword.madific.control.RegisterToLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>login_servlet</servlet-name>
         <url-pattern>/login_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>register_servlet</servlet-name>
+        <url-pattern>/register_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginToRegister_servlet</servlet-name>
+        <url-pattern>/LoginToRegister_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterToLogin</servlet-name>
+        <url-pattern>/RegisterToLogin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

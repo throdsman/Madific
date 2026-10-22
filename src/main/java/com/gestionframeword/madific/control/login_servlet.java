@@ -2,41 +2,59 @@
 package com.gestionframeword.madific.control;
 
 import com.gestionframeword.madific.model.DBConnection;
+import com.gestionframeword.madific.model.PasswordModifier;
+import com.gestionframeword.madific.model.User;
+import com.gestionframeword.madific.model.UserDB;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
  
 public class login_servlet extends HttpServlet
 {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-       
+       final String email = request.getParameter("email");
+        final String pass = request.getParameter("password");
+        
         try
         {
-            var conn = DBConnection.getInstance().CreateConnection();
+            User us = UserDB.GetUser(email);
+            if (us == null)
+            {
+                request.setAttribute("errorMessage", "Correo/Contraseña invalido!");
+                request.setAttribute("email", email);
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            } 
+           
+            String hashed = PasswordModifier.SecurePassword(pass);
             
-            if (conn != null)
+            if (hashed.compareTo(us.getPass()) == 0)
             {
-                request.setAttribute("conection", "VALID!");
-                
-                response.sendRedirect("login_jsp.jsp?success=true");
-            }
-            else
-            {
-                request.setAttribute("conection", "Non valid!");
-                
-                response.sendRedirect("login_jsp.jsp?success=false");
-            }
+                //RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard.jsp");
+                //dispatcher.forward(request, response);
+
+                HttpSession session = request.getSession();
+
+                session.setAttribute("currentUser", us.getName());
+
+                session.setAttribute("currentRole", us.getRole().toString());
+
+                session.setMaxInactiveInterval(15 * 60); // max 15 min of inactivity
+
+                response.sendRedirect("dashboard.jsp"); 
+                return;
+            } 
+           
         }
         catch (Exception e)
         {
-            request.setAttribute("conection", e);
-            
-            request.getRequestDispatcher("login_jsp.jsp").forward(request, response);
+             request.getRequestDispatcher("index.jsp").forward(request, response);
+             return;
         }
     }
 
