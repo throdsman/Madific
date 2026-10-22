@@ -45,7 +45,7 @@ public class register_servlet extends HttpServlet
                 case AlreadySignin:
                 {
                     request.setAttribute("errorMessage", "Email already registered");
-                    request.getRequestDispatcher("createAccount.jsp").forward(request, response);
+                    request.getRequestDispatcher("register.jsp").forward(request, response);
                     break;
                 }
                 case RegisterValid:
@@ -61,7 +61,7 @@ public class register_servlet extends HttpServlet
                     
                     System.out.println( UserDB.add(ub.getUser()) + " row inserted!!!!!!!!!!!!!!!!!!!!!!");
                     
-                    response.sendRedirect("createAccount.jsp?success=true");
+                    response.sendRedirect("register.jsp?success=true");
                     break;
                 }
             }
@@ -71,7 +71,7 @@ public class register_servlet extends HttpServlet
         {
             System.out.println(e);
             System.out.println("Connection NO!!!!!!!!!!!!!!!!");
-            request.getRequestDispatcher("createAccount.jsp").forward(request, response);
+            request.getRequestDispatcher("register.jsp").forward(request, response);
         }
     }
 
