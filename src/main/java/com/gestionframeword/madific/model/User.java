@@ -6,24 +6,27 @@ public class User
     private String pass;
     private String email;
     private UserRole role;
+    private String access;
     private int age;
     private int id;
+    private String nombres;
+    private String apellidos;
+    private String dni;
 
-    public int getAge()
-    {
-        return age;
-    }
-
-    private User(String name, String pass, String email, UserRole role, int id, int age)
+    public User(String name, String pass, String email, UserRole role, String access, int age, int id, String nombres, String apellidos, String dni)
     {
         this.name = name;
         this.pass = pass;
         this.email = email;
         this.role = role;
-        this.id = id;
+        this.access = access;
         this.age = age;
+        this.id = id;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.dni = dni;
     }
-
+  
     public String getName()
     {
         return name;
@@ -44,28 +47,78 @@ public class User
         return role;
     }
 
+    public String getAccess()
+    {
+        return access;
+    }
+
+    public int getAge()
+    {
+        return age;
+    }
+
     public int getId()
     {
         return id;
     }
-    
-    public String toACommaValueStd()
+
+    public String getNombres()
     {
-        return "User{";
+        return nombres;
     }
-    
+
+    public String getApellidos()
+    {
+        return apellidos;
+    }
+
+    public String getDni()
+    {
+        return dni;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "User{" + "name=" + name + ", pass=" + pass + ", email=" + email + ", role=" + role + ", access=" + access + ", age=" + age + ", id=" + id + '}';
+    }
+ 
     public static class UserBuilder
     {
         private String name;
         private String pass;
         private String email;
         private UserRole role;
+        private String access;
         private int age;
-        private int id;
+        private int id; 
+        private String nombres;
+        private String apellidos;
+        private String dni;
         
         public User getUser()
         {
-            return new User(name, pass, email, role, id, age);
+            return new User(name, pass, email, role, access, age, id, nombres, apellidos, dni);
+        }
+
+        public void setDni(String dni)
+        {
+            this.dni = dni;
+        }
+        
+        public void setNombres(String nombres)
+        {
+            this.nombres = nombres;
+        }
+
+        public void setApellidos(String apellidos)
+        {
+            this.apellidos = apellidos;
+        } 
+        
+        public void setAccess(String access)
+        {
+            this.access = access;
         }
 
         public void setName(String name)

@@ -5,6 +5,7 @@ import com.gestionframeword.madific.model.DBConnection;
 import com.gestionframeword.madific.model.PasswordModifier;
 import com.gestionframeword.madific.model.User;
 import com.gestionframeword.madific.model.UserDB;
+import static com.gestionframeword.madific.model.UserRole.Admin;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -18,17 +19,20 @@ public class login_servlet extends HttpServlet
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-       final String email = request.getParameter("email");
+        final String email = request.getParameter("email");
         final String pass = request.getParameter("password");
+        
+        System.out.println("Entrando a Process Request!!!!!");
         
         try
         {
-            User us = UserDB.GetUser(email);
+            User us = UserDB.GetUser(email); 
             if (us == null)
-            {
+            { 
                 request.setAttribute("errorMessage", "Correo/Contraseña invalido!");
                 request.setAttribute("email", email);
                 request.getRequestDispatcher("login_jsp.jsp").forward(request, response);
+                return;
             } 
            
             String hashed = PasswordModifier.SecurePassword(pass);
@@ -44,9 +48,15 @@ public class login_servlet extends HttpServlet
 
                 session.setAttribute("currentRole", us.getRole().toString());
 
+                session.setAttribute("currentAccess", us.getAccess());
+                
+                session.setAttribute("dash", (us.getRole().compareTo(Admin) == 0) ? "dashboard.jsp" : "dashboard-general.jsp");
+                
                 session.setMaxInactiveInterval(15 * 60); // max 15 min of inactivity
 
-                response.sendRedirect("dashboard.jsp"); 
+                System.out.println(UserDB.updateLastJoined(us) + " |||||||||||| DATOS");
+                
+                response.sendRedirect(request.getContextPath() + "/dashboard"); 
                 return;
             } 
            

@@ -56,7 +56,7 @@ public class register_servlet extends HttpServlet
                     ub.setEmail(email);
                     ub.setId(0);
                     ub.setPass(PasswordModifier.SecurePassword(request.getParameter("password")));
-                    ub.setRole(UserRole.Basic); // every new user is a basic
+                    ub.setRole(UserRole.Practicante); // every new user is a practicante
                     ub.setAge(Integer.valueOf(request.getParameter("age")));
                     
                     System.out.println( UserDB.add(ub.getUser()) + " row inserted!!!!!!!!!!!!!!!!!!!!!!");

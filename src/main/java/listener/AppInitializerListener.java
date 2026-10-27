@@ -13,7 +13,7 @@ public class AppInitializerListener implements ServletContextListener
     {
         
         System.out.println("==================================================");
-        System.out.println("¡La aplicación Madific se ha iniciado con éxito, Ricardo!");
+        System.out.println("¡La aplicación Madific se ha iniciado con éxito, Ricardo!!!!!!!!!!");
         System.out.println("==================================================");
         
         

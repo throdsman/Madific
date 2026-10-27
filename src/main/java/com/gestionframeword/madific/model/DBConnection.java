@@ -16,9 +16,9 @@ public class DBConnection
     
     private DBConnection()
     {
-        url = System.getenv("ENV_URL");
-        username = System.getenv("ENV_USER");
-        pass = System.getenv("ENV_PASS");
+        url =  System.getenv("ENV_URL");
+        username =  System.getenv("ENV_USER");
+        pass =  System.getenv("ENV_PASS");
     }
     
     public static DBConnection getInstance()
